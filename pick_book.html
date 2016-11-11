@@ -8,14 +8,20 @@
   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
   crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.6/lodash.js"></script>
+  <script src="bower_components/clipboard/dist/clipboard.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-  <input style="width: 200px; height: 30px;" type="text" name="name" value="">
-  <button type="button" name="button" >click</button>
-  <div class="result">
+  <input style="width: 200px; height: 30px;" type="text" name="name" value="" placeholder="在此輸入四碼">
+  <button type="button" name="button" >點擊產生網址</button>
+  <textarea class="result" id="bar" placeholder="這裡會產生網址">
 
-  </div>
+  </textarea>
+
+<!-- Trigger -->
+<button class="btn" data-clipboard-action="cut" data-clipboard-target="#bar">
+    點擊複製網址
+</button>
 
 <script>
 /*
@@ -25,6 +31,7 @@
 
 $(document).ready(function() {
     $("button").on("click", function() {
+        new Clipboard('.btn');
         var stringNum = $("input").val();
         var age = _.parseInt(stringNum.substring(0,2));
         var ageFa = _.parseInt(stringNum.substring(0,1));
