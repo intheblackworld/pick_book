@@ -1,0 +1,117 @@
+
+$(document).ready(function() {
+    $(".produce_book").on("click", function() {
+        new Clipboard('.btn');
+        var stringNum = $(".input_book").val();
+        var age = _.parseInt(stringNum.substring(0,2));
+        var ageFa = _.parseInt(stringNum.substring(0,1));
+        // 男生是 0, 女生是 1
+        var sex = stringNum.substring(2,3);
+        // 滿意度 1 ~ 5
+        var satisfaction = _.parseInt(stringNum.substring(3,4));
+
+        function countAgeArea(age) {
+            if (age >= 94 || age <= 16) {
+                return 1
+            } else if ( age >= 91 && age <= 93 ) {
+                return 2
+            } else if ( age >= 88 && age <= 90) {
+                return 3
+            } else if ( age <= 87 ) {
+                return 4
+            }
+        }
+        function countSatisfactionArea(satisfaction) {
+            if (satisfaction <=2) {
+                return 1
+            } else if (satisfaction == 3) {
+                return 2
+            } else if (satisfaction >= 4) {
+                return 3
+            }
+        }
+        var result = _.toString(countAgeArea(age)) +
+                     sex +
+                     _.toString(countSatisfactionArea(satisfaction));
+
+
+        switch (result) {
+            case "101":
+            $('.result').html('http://www.books.com.tw/exep/assp.php/raja83946993/products/0010617128?utm_source=raja83946993&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-201611')
+            break;
+            case "102":
+                $('.result').html('http://www.books.com.tw/exep/assp.php/raja83946993/products/0010526016?utm_source=raja83946993&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-201611');
+                break
+            case "103":
+                $('.result').html('http://www.books.com.tw/exep/assp.php/raja83946993/products/0010668300?utm_source=raja83946993&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-201611');
+                break
+            case "111":
+                $('.result').html('http://www.books.com.tw/exep/assp.php/raja83946993/products/0010429469?utm_source=raja83946993&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-201611');
+                break
+            case "112":
+                $('.result').html('http://www.books.com.tw/exep/assp.php/raja83946993/products/0010466415?utm_source=raja83946993&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-201611');
+                break
+            case "113":
+                $('.result').html('http://www.books.com.tw/exep/assp.php/raja83946993/products/0010629280?utm_source=raja83946993&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-201611');
+                break
+            case "201":
+                $('.result').html('http://www.books.com.tw/exep/assp.php/raja83946993/products/0010720289?utm_source=raja83946993&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-201611');
+                break
+            case "202":
+                $('.result').html('http://www.books.com.tw/exep/assp.php/raja83946993/products/0010245329?utm_source=raja83946993&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-201611');
+                break
+            case "203":
+                $('.result').html('http://www.books.com.tw/exep/assp.php/raja83946993/products/0010467379?utm_source=raja83946993&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-201611');
+                break
+            case "211":
+                $('.result').html('http://www.books.com.tw/exep/assp.php/raja83946993/products/0010657461?utm_source=raja83946993&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-201611');
+                break
+            case "212":
+                $('.result').html('http://www.books.com.tw/exep/assp.php/raja83946993/products/0010516904?utm_source=raja83946993&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-201611');
+                break
+            case "213":
+                $('.result').html('http://www.books.com.tw/exep/assp.php/raja83946993/products/0010556027?utm_source=raja83946993&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-201611');
+                break
+            case "301":
+                $('.result').html('http://www.books.com.tw/exep/assp.php/raja83946993/products/0010412928?utm_source=raja83946993&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-201611');
+                break
+            case "302":
+                $('.result').html('http://www.books.com.tw/exep/assp.php/raja83946993/products/0010662189?utm_source=raja83946993&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-201611');
+                break
+            case "303":
+                $('.result').html('http://www.books.com.tw/exep/assp.php/raja83946993/products/0010722753?utm_source=raja83946993&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-201611');
+                break
+            case "311":
+                $('.result').html('http://www.books.com.tw/exep/assp.php/raja83946993/products/0010653153?utm_source=raja83946993&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-201611');
+                break
+            case "312":
+                $('.result').html('http://www.books.com.tw/exep/assp.php/raja83946993/products/0010710928?utm_source=raja83946993&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-201611');
+                break
+            case "313":
+                $('.result').html('http://www.books.com.tw/exep/assp.php/raja83946993/products/0010542481?utm_source=raja83946993&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-201611');
+                break
+            case "401":
+                $('.result').html('http://www.books.com.tw/exep/assp.php/raja83946993/products/0010729561?utm_source=raja83946993&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-201611');
+                break
+            case "402":
+                $('.result').html('http://www.books.com.tw/exep/assp.php/raja83946993/products/0010584669?utm_source=raja83946993&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-201611');
+                break
+            case "403":
+                $('.result').html('http://www.books.com.tw/exep/assp.php/raja83946993/products/0010467752?utm_source=raja83946993&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-201611');
+                break
+            case "411":
+                $('.result').html('http://www.books.com.tw/exep/assp.php/raja83946993/products/0010621037?utm_source=raja83946993&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-201611');
+                break
+            case "412":
+                $('.result').html('http://www.books.com.tw/exep/assp.php/raja83946993/products/0010453641?utm_source=raja83946993&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-201611');
+                break
+            case "413":
+                $('.result').html('http://www.books.com.tw/exep/assp.php/raja83946993/products/0010691480?loc=P_asb_003&utm_source=raja83946993&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-201611');
+                break
+           default:
+                 alert(error);
+        }
+
+    })
+
+});
